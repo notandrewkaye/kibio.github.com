@@ -30,8 +30,6 @@
      
     </style>
     <link href="css/custom-theme/jquery-ui-1.10.1.custom.css" rel="stylesheet">
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/jquery-ui-1.10.1.custom.js"></script>
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
 
   </head>
@@ -211,7 +209,6 @@
   							</tbody>
 					</table>
 
-<div id="kibiosortable">
   <ul id="sortable">
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
@@ -221,7 +218,6 @@
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
   </ul>
-</div>
 					</div>
 				</div>
 				</div>
@@ -255,5 +251,12 @@
     <script src="./js/bootstrap-collapse.js"></script>
     <script src="./js/bootstrap-carousel.js"></script> 
     <script src="./js/bootstrap-typeahead.js"></script>
+    <script src="js/jquery-ui-1.10.1.custom.js"></script>
+    <script type="text/javascript">  
+    $(function() {
+      $( "#sortable" ).sortable( { update: function( event, ui ) { console.log(event); console.log(ui); }
+    });
+    });
+    </script>
   </body>
 </html>
