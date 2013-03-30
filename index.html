@@ -27,11 +27,26 @@
           padding-right: 5px;
         }
       }
-     
+      
+      ul#sortable{
+          list-style-type: none!important;
+      }
+      
+      .ui-icon{
+        float:left;
+        margin-top:8px;
+      }
+    
+      #sortableHeader{
+        font-weight:bold;
+      }
+      #playlistHeader{
+        text-align:center;
+      }
     </style>
-    <link href="css/custom-theme/jquery-ui-1.10.1.custom.css" rel="stylesheet">
+    
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
-
+    <link href="./css/custom-theme/jquery-ui-1.10.1.custom.css" rel="stylesheet">
   </head>
 
   <body>
@@ -178,46 +193,45 @@
     							<a class="btn btn-large btn-link" href="#"><i class="icon-forward icon-white"></i></a>
   							</div>
 						</div> <!-- END Play ToolBar -->
-			
-			<!-- Sortable List Replaces This Table -->
-			<table class="table table-hover">
-  						<caption>Playlist</caption>
-  							<thead>
-    							<tr>
-      								<th>fileHealth</th>
-      								<th>file</th>
-      								<th>size</th>
-      								<th>duration</th>
-      								<th>X</th>
-    							</tr>
-  							</thead>
-  							<tbody>
-    							<tr>
-     	 							<td>ERROR</td>
-     								<td>myFile.mov</td>
-     								<td>43.0 MB</td>
-     								<td>3:14</td>
-     								<td>X</td>
-    							</tr>
-    							<tr>
-     	 							<td>ERROR</td>
-     								<td>myFile.mov</td>
-     								<td>43.0 MB</td>
-     								<td>3:14</td>
-     								<td>X</td>
-    							</tr>
-  							</tbody>
-					</table>
-
-  <ul id="sortable">
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-  <li class="ui-state-highlght"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-  </ul>
+		
+    <!-- sortable Playlist --> 
+    <div id="sortableHeader" class="row span12">
+      <h4 class="span12" id="playlistHeader">Playlist</h4>
+      <span class="span2">fileHealth</span>
+      <span class="span2 offset1">file</span>
+      <span class="span2 offset1">size</span>
+      <span class="span2">duration</span>
+    </div>
+    <ul id="sortable" class="span12">
+    <li class="row ui-state-default">
+      <span class="span2 fileHealth">Error!</span>
+      <span class="span2 offset1 file">The Neverending Story.mkv</span>
+      <span class="span2 offset1">1.9G</span>
+      <span class="span2">02:32:02</span>
+      <span class="span1 offset1">X</span>
+    </li>
+    <li class="row ui-state-default">
+      <span class="span2 fileHealth">Error!</span>
+      <span class="span2 offset1 file">The Neverending Story.mkv</span>
+      <span class="span2 offset1">1.9G</span>
+      <span class="span2">02:32:02</span>
+      <span class="span1 offset1">X</span>
+    </li>
+    <li class="row ui-state-default">
+      <span class="span2 fileHealth">Error!</span>
+      <span class="span2 offset1 file">The Neverending Story.mkv</span>
+      <span class="span2 offset1">1.9G</span>
+      <span class="span2">02:32:02</span>
+      <span class="span1 offset1">X</span>
+    </li>
+    <li class="row ui-state-default">
+      <span class="span2 fileHealth">Error!</span>
+      <span class="span2 offset1 file">The Neverending Story.mkv</span>
+      <span class="span2 offset1">1.9G</span>
+      <span class="span2">02:32:02</span>
+      <span class="span1 offset1">X</span>
+    </li>
+    </ul>
 					</div>
 				</div>
 				</div>
