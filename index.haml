@@ -100,26 +100,25 @@
                       %span.span2.offset1 1.9G
                       %span.span2 02:32:02
                       %span.span1.offset1 X
-            / end Media Library
       .row-fluid
         .hero-unit.span8.offset2
           / Start Playlist
           / Begin accordion for Playlist
-          #accordion3.accordion
+          #playlistAccordion.accordion
             .accordion-group
               .accordion-heading.pagination.pagination-right
-                %a.accordion-toggle.btn.btn-link.pagination-right(data-parent="#accordion3" data-toggle="collapse" href="#collapseThree")
+                %a.accordion-toggle.btn.btn-link.pagination-right(data-parent="#playlistAccordion" data-toggle="collapse" href="#videoContainer")
                   %i.icon-chevron-up.icon-white
               / Everything That Collapses in box1
-              #collapseThree.accordion-body.collapse.in
+              #videoContainer.accordion-body.collapse.in
                 .accordion-inner
-                  #accordion2.accordion
+                  #videoAccordion.accordion
                     .accordion-group
                       .accordion-heading.pagination.pagination-right
-                        %a.accordion-toggle.btn.btn-link.pagination-right(data-parent="#accordion2" data-toggle="collapse" href="#collapseTwo")
+                        %a.accordion-toggle.btn.btn-link.pagination-right(data-parent="#videoAccordion" data-toggle="collapse" href="#videoBox")
                           %i.icon-chevron-up.icon-white
                       / Everything That Collapses in playbackBox
-                      #collapseTwo.accordion-body.collapse.in
+                      #videoBox.accordion-body.collapse.in
                         .accordion-inner
                           .tabBox.pagination.pagination-right(style="height:30px; min-height:30px; background-color:gray;")
                             %ul.nav.nav-tabs
