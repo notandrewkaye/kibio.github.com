@@ -18,22 +18,133 @@
         padding: 9px 0;
       }
       
-      @media (max-width: 980px) {
+      .hero-unit {
+      padding: 12px 24px 12px 24px;
+      margin: 12px;
+      font-size: 18px;
+       font-weight: 200;
+      line-height: 0px;
+      color: inherit;
+      background-color: #0071BC;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      border-radius: 12px;
+      }
+
+          <! -- Accordion Styling -- >      
+
+        .accordion {
+        margin: 0px;
+        padding: 0px 6px 0px 6px;
+      }
+
+     .accordion-group {
+  margin-bottom: 1px;
+  border: none;
+  padding: 0px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+.accordion-heading {
+  padding: 0px;
+  border: none;
+
+}
+
+.accordion-heading .accordion-toggle {
+  display: block;
+  padding: 0px;
+  border: none;
+  height: 30px;
+
+}
+
+
+.accordion-inner {
+  padding: 0px;
+  border: none;
+}
+
+    
+#mediaLibraryContainer {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+    }
+
+#iconOffset{
+  padding-right:24px;
+}
+
+<! -- End Accordion Styling -- >   
+
+#videoAccordion{
+  height:0px;
+}
+    
+      <!-- #0071BC contrasting blue color-->
+      
+  @media (max-width: 980px) {
         /* Enable use of floated navbar text */
         .navbar-text .pull-right {
           float: none;
-          padding-left: 5px;
-          padding-right: 5px;
-        }
+          padding-left: 0px;
+          padding-right: 0px;
+        }  
       }
       
-      ul#sortablePlaylist, ul#sortableMediaLibrary{
-          list-style-type: none!important;
+ul#sortablePlaylist, ul#sortableMediaLibrary{
+list-style-type: none!important;
+margin: 0px;
+padding: 0px;
+border: none;
+}
+          
+          
+      }
+
+<! -- Nav Tabs -->
+
+      
+    
+.nav .nav-tabs > li{
+  color:#0071BC;
+  border: none;
+  background-color: #3FA9F5;
+}
+
+.nav.nav-tabs > li > a{
+  border: none;
+  background-color: #3FA9F5;
+}
+      
+.nav.nav-tabs > li > a:hover{
+  color:#FFFFFF;
+  border: none;
+  background-color: #3FA9F5;
+}
+
+
+#tabBoxStyle{
+  height:24px; 
+  min-height:24px; 
+  background-color:#3FA9F5; 
+  margin:0px;
+  padding: 12px;
+
+  }
+
+
+
+      .playlistAccordion {
+        background-color: #3FA9F5;
       }
       
       .ui-icon{
         float:left;
-        margin-top:8px;
+        margin-top:12px;
       }
       
       #sortableHeader{
@@ -42,9 +153,7 @@
       #playlistHeader{
         text-align:center;
       }
-      .btn-toolbar{
-        text-align:center;
-      }
+      
     </style>
     <link href='./css/bootstrap-responsive.css' rel='stylesheet'>
     <link href='./css/custom-theme/jquery-ui-1.10.1.custom.css' rel='stylesheet'>
@@ -82,7 +191,7 @@
           <!-- Media Library -->
           <div class='accordion' id='mediaLibraryAccordion'>
             <div class='accordion-group'>
-              <div class='accordion-heading pagination pagination-right'>
+              <div class='accordion-heading'>
                 <a class='accordion-toggle btn btn-link pagination-right' data-parent='#mediaLibraryAccordion' data-toggle='collapse' href='#mediaLibraryContainer'>
                   <i class='icon-chevron-up icon-white'></i>
                 </a>
@@ -90,33 +199,33 @@
               <div class='accordion-body collapse in' id='mediaLibraryContainer'>
                 <div class='accordion-inner'>
                   <!-- Sortable List Replaces This Table -->
-                  <ul class='span12 connectedSortable' id='sortableMediaLibrary'>
+                  <ul class='span12' id='sortableMediaLibrary'>
                     <li class='row ui-state-default'>
-                      <span class='span2 fileHealth'>Error!</span>
-                      <span class='span2 offset1 file'>The Neverending Story.mkv</span>
-                      <span class='span2 offset1'>1.9G</span>
-                      <span class='span2'>02:32:02</span>
+                      <span class='span1 offset1 fileHealth'>Error!</span>
+                      <span class='span5  file'>The Neverending Story.mkv</span>
+                      <span class='span1 '>1.9Gb</span>
+                      <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
                     <li class='row ui-state-default'>
-                      <span class='span2 fileHealth'>Error!</span>
-                      <span class='span2 offset1 file'>The Neverending Story.mkv</span>
-                      <span class='span2 offset1'>1.9G</span>
-                      <span class='span2'>02:32:02</span>
+                      <span class='span1 offset1 fileHealth'>Error!</span>
+                      <span class='span5  file'>The Neverending Story.mkv</span>
+                      <span class='span1 '>1.9Gb</span>
+                      <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
                     <li class='row ui-state-default'>
-                      <span class='span2 fileHealth'>Error!</span>
-                      <span class='span2 offset1 file'>The Neverending Story.mkv</span>
-                      <span class='span2 offset1'>1.9G</span>
-                      <span class='span2'>02:32:02</span>
+                      <span class='span1 offset1 fileHealth'>Error!</span>
+                      <span class='span5  file'>The Neverending Story.mkv</span>
+                      <span class='span1 '>1.9Gb</span>
+                      <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
                     <li class='row ui-state-default'>
-                      <span class='span2 fileHealth'>Error!</span>
-                      <span class='span2 offset1 file'>The Neverending Story.mkv</span>
-                      <span class='span2 offset1'>1.9G</span>
-                      <span class='span2'>02:32:02</span>
+                      <span class='span1 offset1 fileHealth'>Error!</span>
+                      <span class='span5  file'>The Neverending Story.mkv</span>
+                      <span class='span1 '>1.9Gb</span>
+                      <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
                   </ul>
@@ -132,7 +241,7 @@
           <!-- Begin accordion for Playlist -->
           <div class='accordion' id='playlistAccordion'>
             <div class='accordion-group'>
-              <div class='accordion-heading pagination pagination-right'>
+              <div class='accordion-heading'>
                 <a class='accordion-toggle btn btn-link pagination-right' data-parent='#playlistAccordion' data-toggle='collapse' href='#videoContainer'>
                   <i class='icon-chevron-up icon-white'></i>
                 </a>
@@ -142,29 +251,29 @@
                 <div class='accordion-inner'>
                   <div class='accordion' id='videoAccordion'>
                     <div class='accordion-group'>
-                      <div class='accordion-heading pagination pagination-right'>
-                        <a class='accordion-toggle btn btn-link pagination-right' data-parent='#videoAccordion' data-toggle='collapse' href='#videoBox'>
+                      <div class='accordion-heading'>
+                        <a class='accordion-toggle btn btn-link pagination-right' data-parent='#videoAccordion' data-toggle='collapse' href='#videoBox' id = "iconOffset">
                           <i class='icon-chevron-up icon-white'></i>
                         </a>
                       </div>
                       <!-- Everything That Collapses in playbackBox -->
                       <div class='accordion-body collapse in' id='videoBox'>
                         <div class='accordion-inner'>
-                          <div class='tabBox pagination pagination-right' style='height:30px; min-height:30px; background-color:gray;'>
+                          <div class='tabBox pagination pagination-right' id='tabBoxStyle'>
                             <ul class='nav nav-tabs'>
-                              <li class='active'>
+                              <li class='active' >
                                 <a data-toggle='tab' href='#emptyBox1'>
-                                  <i class='icon-adjust'></i>
+                                  <i href='/'>A</i>
                                 </a>
                               </li>
                               <li>
                                 <a data-toggle='tab' href='#emptyBox2'>
-                                  <i class='icon-adjust'></i>
+                                  <i href='/'>B</i>
                                 </a>
                               </li>
                               <li>
                                 <a data-toggle='tab' href='#emptyBox3'>
-                                  <i class='icon-adjust'></i>
+                                  <i href='/'>C</i>
                                 </a>
                               </li>
                             </ul>
@@ -205,49 +314,42 @@
                   </div>
                   <!-- END Play ToolBar -->
                   <!-- sortable Playlist -->
-                  <div class='row span12' id='sortablePlaylistHeader'>
+                  <!--<div class='row span12' id='sortablePlaylistHeader'>
                     <h4 class='span12' id='playlistHeader'>Playlist</h4>
                     <span class='span2'>fileHealth</span>
                     <span class='span2 offset1'>file</span>
                     <span class='span2 offset1'>size</span>
                     <span class='span2'>duration</span>
                   </div>
-                  <ul class='span12 connectedSortable' id='sortablePlaylist'>
+                  -->
+                  <ul class='span12' id='sortablePlaylist'>
                     <li class='row ui-state-default'>
-                      <span class='span2 fileHealth'>Error!</span>
-                      <span class='span2 offset1 file'>The Neverending Story.mkv</span>
-                      <span class='span2 offset1'>1.9G</span>
-                      <span class='span2'>02:32:02</span>
-                      <span class='span1 offset1'>
-                        <a href='#'>X</a>
-                      </span>
+                      <span class='span1 offset1 fileHealth'>Error!</span>
+                      <span class='span5 file'>The Neverending Story.mkv</span>
+                      <span class='span1 '>1.9Gb</span>
+                      <span class='span1 offset1'>02:32:02</span>
+                      <span class='span1 offset1'>X</span>
                     </li>
                     <li class='row ui-state-default'>
-                      <span class='span2 fileHealth'>Error!</span>
-                      <span class='span2 offset1 file'>The Neverending Story.mkv</span>
-                      <span class='span2 offset1'>1.9G</span>
-                      <span class='span2'>02:32:02</span>
-                      <span class='span1 offset1'>
-                        <a href='#'>X</a>
-                      </span>
+                    <span class='span1 offset1 fileHealth'>Error!</span>
+                      <span class='span5 file'>The Neverending Story.mkv</span>
+                      <span class='span1 '>1.9Gb</span>
+                      <span class='span1 offset1'>02:32:02</span>
+                      <span class='span1 offset1'>X</span>
                     </li>
                     <li class='row ui-state-default'>
-                      <span class='span2 fileHealth'>Error!</span>
-                      <span class='span2 offset1 file'>The Neverending Story.mkv</span>
-                      <span class='span2 offset1'>1.9G</span>
-                      <span class='span2'>02:32:02</span>
-                      <span class='span1 offset1'>
-                        <a href='#'>X</a>
-                      </span>
+                      <span class='span1 offset1 fileHealth'>Error!</span>
+                      <span class='span5 file'>The Neverending Story.mkv</span>
+                      <span class='span1 '>1.9Gb</span>
+                      <span class='span1 offset1'>02:32:02</span>
+                      <span class='span1 offset1'>X</span>
                     </li>
                     <li class='row ui-state-default'>
-                      <span class='span2 fileHealth'>Error!</span>
-                      <span class='span2 offset1 file'>The Neverending Story.mkv</span>
-                      <span class='span2 offset1'>1.9G</span>
-                      <span class='span2'>02:32:02</span>
-                      <span class='span1 offset1'>
-                        <a href='#'>X</a>
-                      </span>
+                      <span class='span1 offset1 fileHealth'>Error!</span>
+                      <span class='span5 file'>The Neverending Story.mkv</span>
+                      <span class='span1 '>1.9Gb</span>
+                      <span class='span1 offset1'>02:32:02</span>
+                      <span class='span1 offset1'>X</span>
                     </li>
                   </ul>
                 </div>
@@ -278,7 +380,8 @@
     <script>
       $(function() {
         $( "#sortablePlaylist, #sortableMediaLibrary" ).sortable({
-          connectWith: ".connectedSortable"
+          connectWith: ".connectedSortable",
+          placeholder: "ui-state-highlight"
         }).disableSelection();
       });
     </script>
