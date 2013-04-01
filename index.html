@@ -138,21 +138,29 @@
       
       
       
-            .playlistAccordion {
-              background-color: #3FA9F5;
-            }
-            
-            .ui-icon{
-              float:left;
-              margin-top:12px;
-            }
-            
-            #sortableHeader{
-              font-weight:bold;
-            }
-            #playlistHeader{
-              text-align:center;
-            }
+        .playlistAccordion {
+          background-color: #3FA9F5;
+        }
+        
+        .ui-icon{
+          float:left;
+          margin-top:12px;
+        }
+      
+        #playBar{
+          text-align:center;
+          margin-left:0;
+        }
+        
+        #sortableHeader{
+          font-weight:bold;
+        }
+        .connectedSortable{
+          cursor:pointer;
+        }
+        #playlistHeader{
+          text-align:center;
+        }
     </style>
     <link href='./css/bootstrap-responsive.css' rel='stylesheet'>
     <link href='./css/custom-theme/jquery-ui-1.10.1.custom.css' rel='stylesheet'>
@@ -298,7 +306,7 @@
                   </div>
                   <!-- END ACCORDION -->
                   <!-- END accordion for video playback -->
-                  <div class='btn-toolbar'>
+                  <div class='btn-toolbar span12' id='playBar'>
                     <div class='btn-group pagination pagination-center'>
                       <a class='btn btn-large btn-link' href='#'>
                         <i class='icon-backward icon-white'></i>
@@ -371,8 +379,7 @@
     <script>
       $(function() {
         $( "#sortablePlaylist, #sortableMediaLibrary" ).sortable({
-          connectWith: ".connectedSortable",
-          placeholder: "ui-state-highlight"
+          connectWith: ".connectedSortable"
         }).disableSelection();
       });
     </script>

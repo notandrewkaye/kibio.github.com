@@ -135,24 +135,32 @@
         padding: 12px;
       
         }
-      
-      
-      
-            .playlistAccordion {
-              background-color: #3FA9F5;
-            }
-            
-            .ui-icon{
-              float:left;
-              margin-top:12px;
-            }
-            
-            #sortableHeader{
-              font-weight:bold;
-            }
-            #playlistHeader{
-              text-align:center;
-            }
+
+  
+  
+        .playlistAccordion {
+          background-color: #3FA9F5;
+        }
+        
+        .ui-icon{
+          float:left;
+          margin-top:12px;
+        }
+
+        #playBar{
+          text-align:center;
+          margin-left:0;
+        }
+        
+        #sortableHeader{
+          font-weight:bold;
+        }
+        .connectedSortable{
+          cursor:pointer;
+        }
+        #playlistHeader{
+          text-align:center;
+        }
     %link{:href => "./css/bootstrap-responsive.css", :rel => "stylesheet"}/
     %link{:href => "./css/custom-theme/jquery-ui-1.10.1.custom.css", :rel => "stylesheet"}/
   %body
@@ -254,7 +262,7 @@
                     / END ACCORDION GROUP
                   / END ACCORDION
                   / END accordion for video playback
-                  .btn-toolbar
+                  #playBar.btn-toolbar.span12
                     .btn-group.pagination.pagination-center
                       %a.btn.btn-large.btn-link{:href => "#"}
                         %i.icon-backward.icon-white
@@ -309,7 +317,6 @@
     :javascript
       $(function() {
         $( "#sortablePlaylist, #sortableMediaLibrary" ).sortable({
-          connectWith: ".connectedSortable",
-          placeholder: "ui-state-highlight"
+          connectWith: ".connectedSortable"
         }).disableSelection();
       });
