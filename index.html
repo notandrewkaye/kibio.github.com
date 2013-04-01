@@ -90,7 +90,7 @@
               <div class='accordion-body collapse in' id='mediaLibraryContainer'>
                 <div class='accordion-inner'>
                   <!-- Sortable List Replaces This Table -->
-                  <ul class='span12' id='sortableMediaLibrary'>
+                  <ul class='span12 connectedSortable' id='sortableMediaLibrary'>
                     <li class='row ui-state-default'>
                       <span class='span2 fileHealth'>Error!</span>
                       <span class='span2 offset1 file'>The Neverending Story.mkv</span>
@@ -212,7 +212,7 @@
                     <span class='span2 offset1'>size</span>
                     <span class='span2'>duration</span>
                   </div>
-                  <ul class='span12' id='sortablePlaylist'>
+                  <ul class='span12 connectedSortable' id='sortablePlaylist'>
                     <li class='row ui-state-default'>
                       <span class='span2 fileHealth'>Error!</span>
                       <span class='span2 offset1 file'>The Neverending Story.mkv</span>
@@ -277,9 +277,9 @@
     <script src='js/jquery-ui-1.10.1.custom.js'></script>
     <script>
       $(function() {
-        $( "#sortablePlaylist" ).sortable( { update: function( event, ui ) { console.log(event); console.log(ui); }   
-        });
-        $( "#sortableMediaLibrary" ).sortable();
+        $( "#sortablePlaylist, #sortableMediaLibrary" ).sortable({
+          connectWith: ".connectedSortable"
+        }).disableSelection();
       });
     </script>
   </body>

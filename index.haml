@@ -77,7 +77,7 @@
               #mediaLibraryContainer.accordion-body.collapse.in
                 .accordion-inner
                   / Sortable List Replaces This Table
-                  %ul#sortableMediaLibrary.span12
+                  %ul#sortableMediaLibrary.span12.connectedSortable
                     %li.row.ui-state-default
                       %span.span2.fileHealth Error!
                       %span.span2.offset1.file The Neverending Story.mkv
@@ -162,7 +162,7 @@
                     %span.span2.offset1 file
                     %span.span2.offset1 size
                     %span.span2 duration
-                  %ul#sortablePlaylist.span12
+                  %ul#sortablePlaylist.span12.connectedSortable
                     %li.row.ui-state-default
                       %span.span2.fileHealth Error!
                       %span.span2.offset1.file The Neverending Story.mkv
@@ -210,7 +210,8 @@
     %script(src="js/jquery-ui-1.10.1.custom.js")
     :javascript
       $(function() {
-        $( "#sortablePlaylist" ).sortable( { update: function( event, ui ) { console.log(event); console.log(ui); }   
-        });
-        $( "#sortableMediaLibrary" ).sortable();
+        $( "#sortablePlaylist, #sortableMediaLibrary" ).sortable({
+          connectWith: ".connectedSortable",
+          placeholder: "ui-state-highlight"
+        }).disableSelection();
       });
