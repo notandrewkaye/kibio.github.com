@@ -207,28 +207,28 @@
                 <div class='accordion-inner'>
                   <!-- Sortable List Replaces This Table -->
                   <ul class='span12 connectedSortable' id='sortableMediaLibrary'>
-                    <li class='row ui-state-default'>
+                    <li class='row ui-state-default' id='mediaLibraryOne'>
                       <span class='span1 offset1 fileHealth'>Error!</span>
                       <span class='span5 file'>The Neverending Story.mkv</span>
                       <span class='span1'>1.9Gb</span>
                       <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
-                    <li class='row ui-state-default'>
+                    <li class='row ui-state-default' id='mediaLibraryTwo'>
                       <span class='span1 offset1 fileHealth'>Error!</span>
                       <span class='span5 file'>The Neverending Story.mkv</span>
                       <span class='span1'>1.9Gb</span>
                       <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
-                    <li class='row ui-state-default'>
+                    <li class='row ui-state-default' id='mediaLibraryThree'>
                       <span class='span1 offset1 fileHealth'>Error!</span>
                       <span class='span5 file'>The Neverending Story.mkv</span>
                       <span class='span1'>1.9Gb</span>
                       <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
-                    <li class='row ui-state-default'>
+                    <li class='row ui-state-default' id='mediaLibraryFour'>
                       <span class='span1 offset1 fileHealth'>Error!</span>
                       <span class='span5 file'>The Neverending Story.mkv</span>
                       <span class='span1'>1.9Gb</span>
@@ -322,28 +322,28 @@
                   <!-- END Play ToolBar -->
                   <!-- sortable Playlist -->
                   <ul class='span12 connectedSortable' id='sortablePlaylist'>
-                    <li class='row ui-state-default'>
+                    <li class='row ui-state-default' id='playlistOne'>
                       <span class='span1 offset1 fileHealth'>Error!</span>
                       <span class='span5 file'>The Neverending Story.mkv</span>
                       <span class='span1'>1.9Gb</span>
                       <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
-                    <li class='row ui-state-default'>
+                    <li class='row ui-state-default' id='playlistTwo'>
                       <span class='span1 offset1 fileHealth'>Error!</span>
                       <span class='span5 file'>The Neverending Story.mkv</span>
                       <span class='span1'>1.9Gb</span>
                       <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
-                    <li class='row ui-state-default'>
+                    <li class='row ui-state-default' id='playlistThree'>
                       <span class='span1 offset1 fileHealth'>Error!</span>
                       <span class='span5 file'>The Neverending Story.mkv</span>
                       <span class='span1'>1.9Gb</span>
                       <span class='span1 offset1'>02:32:02</span>
                       <span class='span1 offset1'>X</span>
                     </li>
-                    <li class='row ui-state-default'>
+                    <li class='row ui-state-default' id='playlistFour'>
                       <span class='span1 offset1 fileHealth'>Error!</span>
                       <span class='span5 file'>The Neverending Story.mkv</span>
                       <span class='span1'>1.9Gb</span>
@@ -380,7 +380,13 @@
       $(function() {
         $( "#sortablePlaylist, #sortableMediaLibrary" ).sortable({
           connectWith: ".connectedSortable"
-        }).disableSelection();
+        });
+        $( "#sortablePlaylist" ).sortable({
+          update: function(event, ui) {console.log($( "#sortablePlaylist" ).sortable("toArray")); }
+        });
+        $( "#sortableMediaLibrary" ).sortable({
+          update: function(event, ui) {console.log($( "#sortableMediaLibrary" ).sortable("toArray")); }
+        });
       });
     </script>
   </body>

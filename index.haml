@@ -194,25 +194,25 @@
                 .accordion-inner
                   / Sortable List Replaces This Table
                   %ul#sortableMediaLibrary.span12.connectedSortable
-                    %li.row.ui-state-default
+                    %li.row.ui-state-default#mediaLibraryOne
                       %span.span1.offset1.fileHealth Error!
                       %span.span5.file The Neverending Story.mkv
                       %span.span1 1.9Gb
                       %span.span1.offset1 02:32:02
                       %span.span1.offset1 X
-                    %li.row.ui-state-default
+                    %li.row.ui-state-default#mediaLibraryTwo
                       %span.span1.offset1.fileHealth Error!
                       %span.span5.file The Neverending Story.mkv
                       %span.span1 1.9Gb
                       %span.span1.offset1 02:32:02
                       %span.span1.offset1 X
-                    %li.row.ui-state-default
+                    %li.row.ui-state-default#mediaLibraryThree
                       %span.span1.offset1.fileHealth Error!
                       %span.span5.file The Neverending Story.mkv
                       %span.span1 1.9Gb
                       %span.span1.offset1 02:32:02
                       %span.span1.offset1 X
-                    %li.row.ui-state-default
+                    %li.row.ui-state-default#mediaLibraryFour
                       %span.span1.offset1.fileHealth Error!
                       %span.span5.file The Neverending Story.mkv
                       %span.span1 1.9Gb
@@ -273,25 +273,25 @@
                   / END Play ToolBar
                   / sortable Playlist
                   %ul#sortablePlaylist.span12.connectedSortable
-                    %li.row.ui-state-default
+                    %li.row.ui-state-default#playlistOne
                       %span.span1.offset1.fileHealth Error!
                       %span.span5.file The Neverending Story.mkv
                       %span.span1 1.9Gb
                       %span.span1.offset1 02:32:02
                       %span.span1.offset1 X
-                    %li.row.ui-state-default
+                    %li.row.ui-state-default#playlistTwo
                       %span.span1.offset1.fileHealth Error!
                       %span.span5.file The Neverending Story.mkv
                       %span.span1 1.9Gb
                       %span.span1.offset1 02:32:02
                       %span.span1.offset1 X
-                    %li.row.ui-state-default
+                    %li.row.ui-state-default#playlistThree
                       %span.span1.offset1.fileHealth Error!
                       %span.span5.file The Neverending Story.mkv
                       %span.span1 1.9Gb
                       %span.span1.offset1 02:32:02
                       %span.span1.offset1 X
-                    %li.row.ui-state-default
+                    %li.row.ui-state-default#playlistFour
                       %span.span1.offset1.fileHealth Error!
                       %span.span5.file The Neverending Story.mkv
                       %span.span1 1.9Gb
@@ -318,5 +318,12 @@
       $(function() {
         $( "#sortablePlaylist, #sortableMediaLibrary" ).sortable({
           connectWith: ".connectedSortable"
-        }).disableSelection();
+        });
+        $( "#sortablePlaylist" ).sortable({
+          update: function(event, ui) {console.log($( "#sortablePlaylist" ).sortable("toArray")); }
+        });
+        // to be abandoned
+        $( "#sortableMediaLibrary" ).sortable({
+          update: function(event, ui) {console.log($( "#sortableMediaLibrary" ).sortable("toArray")); }
+        });
       });
