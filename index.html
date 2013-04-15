@@ -379,7 +379,6 @@
 
     <script src="js/jquery.mustache.js"></script>
     <script id="playlistElement" type="text/x-mustache">
-      {{#item}}
       <li class='row ui-state-default' id='{{UUID}}'>
         <span class='span1 offset1 fileHealth'>{{fileHealth}}</span>
         <span class='span5 file'><b>{{UUID}}</b> {{name}} / {{URI}}</span>
@@ -387,7 +386,6 @@
         <span class='span1 offset1'>{{frameCount}} {{duration}}</span>
         <span class='span1 offset1'>X</span>
       </li>
-      {{/item}}
     </script>
     <script>
       $(function() {
@@ -449,9 +447,7 @@
       console.log(buildJson());
       function popPlaylist(data){
         $("#sortablePlaylist .row, #sortableMediaLibrary .row").each(function(){
-          $(this).html($.mustache($("#playlistElement").html(),{
-            item : buildJson()
-          }));
+          $(this).html($.mustache($("#playlistElement").html(),buildJson()));
         });
       }
       
