@@ -1,276 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>kibio</title>
+    <title>kib.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Le styles -->
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-        background-color: #3FA9F5;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-
-      @media (max-width: 980px) {
-        /* Enable use of floated navbar text */
-        .navbar-text .pull-right {
-          float: none;
-          padding-left: 5px;
-          padding-right: 5px;
-        }
-      }
-      
-      ul#sortable{
-          list-style-type: none!important;
-      }
-      
-      .ui-icon{
-        float:left;
-        margin-top:8px;
-      }
+    <!-- Bootstrap -->
+    <link href="/common/css/bootstrap.css" rel="stylesheet" media="screen">
     
-      #sortableHeader{
-        font-weight:bold;
+    <style>
+      
+    body {
+        padding-top: 240px;
+        padding-bottom: 40px;
+        background-color: #000000;
       }
-      #playlistHeader{
-        text-align:center;
-      }
+      
+    .btn.btn-primary.btn-large {
+      color: #ffffff;
+      background-color: #3FA9F5 !important;
+      *background-color: #3FA9F5 !important;
+}
+
+.brand {
+  background-color: #3FA9F5;
+}
+
+.navbar-inner{
+  border-radius:0px;
+  background: #3FA9F5 !important; 
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none !important;
+  border-top:1px solid #3FA9F5 !important;
+  border-bottom:1px solid #3FA9F5 !important;
+  border-left:0px !important;
+  border-right:0px !important;
+}
+
+.navbar {
+  display: block;
+  float: right;
+  font-size: 20px;
+  font-weight: 200;
+  color: #777777;
+  text-shadow: 0 1px 0 #ffffff;
+}
+
+nav.li.active {
+  background-color: none;
+  }
+     
     </style>
     
-    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="./css/custom-theme/jquery-ui-1.10.1.custom.css" rel="stylesheet">
+    <link href='/common/css/bootstrap-responsive.css' rel='stylesheet'>
   </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top" >
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#"><!-- Kibio --></a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">FAQ</a></li>
-              <li><a href="#contact">Help</a></li>
+  
+  <body >
+  <div class="navbar navbar-fixed-top">
+   <div class="navbar-inner">
+     <div class="container">
+        <a class="brand" href="index.html"> <img src="/common/img/kibioLittleBlueK.png"></a>
+        <!--
+            <ul class='nav'>
+              <li class='active'>
+                <a href='#'>Player</a>
+              </li>
+              <li>
+                <a href='#faq'>FAQ</a>
+              </li>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-	
-    <div class="container-fluid">
-      <div class="row-fluid">
-      <!-- SIDEBAR:: if we want this, here it is 
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
-          </div><!--/.well -->
-        <!-- </div> -->
-        
-        <div class="span8 offset2"> <!-- Main Kibio body  -->
-        
-        <div class="hero-unit"> <!-- Media Library -->
-        <div class="accordion" id="accordion1">
-  			<div class="accordion-group">
-  				<div class="accordion-heading pagination pagination-right">
-  					<a class="accordion-toggle btn btn-link pagination-right" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne"><i class="icon-chevron-up icon-white"></i></a>
-  				</div>
-          
-          	<div id="collapseOne" class="accordion-body collapse in">
-      			<div class="accordion-inner">
-      			<!-- Sortable List Replaces This Table -->
-            		<table class="table table-hover">
-  						<caption>media library</caption>
-  							<thead>
-    							<tr>
-      								<th>fileHealth</th>
-      								<th>file</th>
-      								<th>size</th>
-      								<th>duration</th>
-      								<th>X</th>
-    							</tr>
-  							</thead>
-  							<tbody>
-    							<tr>
-     	 							<td>ERROR</td>
-     								<td>myFile.mov</td>
-     								<td>43.0 MB</td>
-     								<td>3:14</td>
-     								<td>X</td>
-    							</tr>
-    							<tr>
-     	 							<td>ERROR</td>
-     								<td>myFile.mov</td>
-     								<td>43.0 MB</td>
-     								<td>3:14</td>
-     								<td>X</td>
-    							</tr>
-  							</tbody>
-					</table>
-				</div>
-			</div>
-			</div>
-		</div>
-		</div> <!-- end Media Library -->
-        
-        <div class="hero-unit"> <!-- Start Playlist -->
-			
-			<!-- Begin accordion for Playlist -->
-			<div class="accordion" id="accordion3">
-  				<div class="accordion-group">
-  					<div class="accordion-heading pagination pagination-right">
-  						<a class="accordion-toggle btn btn-link pagination-right" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree"><i class="icon-chevron-up icon-white"></i></a>
-  					</div>
-          		<!-- Everything That Collapses in box1 -->
-          		<div id="collapseThree" class="accordion-body collapse in">
-      				<div class="accordion-inner">
-      					<div class="accordion" id="accordion2">
-  			<div class="accordion-group">
-  				<div class="accordion-heading pagination pagination-right">
-  					<a class="accordion-toggle btn btn-link pagination-right" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"><i class="icon-chevron-up icon-white"></i></a>
-  				</div>
-          	<!-- Everything That Collapses in playbackBox -->
-          	<div id="collapseTwo" class="accordion-body collapse in">
-      		<div class="accordion-inner">
-      		
-      			<div class="tabBox pagination pagination-right" style="height:30px; min-height:30px; background-color:gray;">
-  					<ul class="nav nav-tabs">
-    					<li class="active"><a href="#emptyBox1" data-toggle="tab"><i class="icon-adjust"></i></a></li>
-    					<li><a href="#emptyBox2" data-toggle="tab"><i class="icon-adjust"></i></a></li>
-    					<li><a href="#emptyBox3" data-toggle="tab"><i class="icon-adjust"></i></a></li>
-    				</ul>
-  				</div> <!-- END TABBOX -->
-  				
-  			<div class="tab-content">
-				<div class="tab-pane active" id="emptyBox1">
-      				<div id="emptyBox1" style="height:400px; min-height:400px; background-color:black;"></div></div>
-      				<div class="tab-pane" id="emptyBox2">
-      				<div id="emptyBox2" style="height:400px; min-height:400px; background-color:red;"></div></div>
-      				<div class="tab-pane" id="emptyBox3">
-      				<div id="emptyBox3" style="height:400px; min-height:400px; background-color:blue;"></div></div>
-  				</div>	
-  			</div>	<!-- END TabContent -->
-  			
-			</div> <!-- END COLLAPSE ONE -->
-			</div> <!-- END ACCORDION GROUP -->
-			</div> <!-- END ACCORDION -->
-			<!-- END accordion for video playback --> 
-			
-      					<div class="btn-toolbar">
-  							<div class="btn-group pagination pagination-center">
-    							<a class="btn btn-large btn-link" href="#"><i class="icon-backward icon-white"></i></a>
-    							<a class="btn btn-large btn-link" href="#"><i class="icon-play icon-white"></i></a>
-    							<a class="btn btn-large btn-link" href="#"><i class="icon-forward icon-white"></i></a>
-  							</div>
-						</div> <!-- END Play ToolBar -->
-		
-    <!-- sortable Playlist --> 
-    <div id="sortableHeader" class="row span12">
-      <h4 class="span12" id="playlistHeader">Playlist</h4>
-      <span class="span2">fileHealth</span>
-      <span class="span2 offset1">file</span>
-      <span class="span2 offset1">size</span>
-      <span class="span2">duration</span>
-    </div>
-    <ul id="sortable" class="span12">
-    <li class="row ui-state-default">
-      <span class="span2 fileHealth">Error!</span>
-      <span class="span2 offset1 file">The Neverending Story.mkv</span>
-      <span class="span2 offset1">1.9G</span>
-      <span class="span2">02:32:02</span>
-      <span class="span1 offset1">X</span>
-    </li>
-    <li class="row ui-state-default">
-      <span class="span2 fileHealth">Error!</span>
-      <span class="span2 offset1 file">The Neverending Story.mkv</span>
-      <span class="span2 offset1">1.9G</span>
-      <span class="span2">02:32:02</span>
-      <span class="span1 offset1">X</span>
-    </li>
-    <li class="row ui-state-default">
-      <span class="span2 fileHealth">Error!</span>
-      <span class="span2 offset1 file">The Neverending Story.mkv</span>
-      <span class="span2 offset1">1.9G</span>
-      <span class="span2">02:32:02</span>
-      <span class="span1 offset1">X</span>
-    </li>
-    <li class="row ui-state-default">
-      <span class="span2 fileHealth">Error!</span>
-      <span class="span2 offset1 file">The Neverending Story.mkv</span>
-      <span class="span2 offset1">1.9G</span>
-      <span class="span2">02:32:02</span>
-      <span class="span1 offset1">X</span>
-    </li>
-    </ul>
-					</div>
-				</div>
-				</div>
-			</div>		
-          </div> <!-- end Playlist -->
-         
-         </div><!--/span-->
-      </div><!--/row-->
+            -->
+</div>
+   </div>
+ </div>
 
-      <!--<hr> -->
+    <div class='logo span8 offset2'>
+  <div id="wrapper" style="width:100%; text-align:center">
+    <img src="/common/img/kibioLogoBlackSquarePixels.png" />
+      <br/>
+      <br/>
+    <p>
+      <a href="" class="btn btn-primary btn-large" >Coming Soon…</a>
+    </p>
+  </div>
 
-      <footer>
-        <p>&copy; </p>
-      </footer>
-
-    </div><!--/.fluid-container-->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./js/jquery.js"></script>
-    <script src="./js/bootstrap-transition.js"></script>
-    <script src="./js/bootstrap-alert.js"></script>
-    <script src="./js/bootstrap-modal.js"></script>
-    <script src="./js/bootstrap-dropdown.js"></script>
-    <script src="./js/bootstrap-scrollspy.js"></script>
-    <script src="./js/bootstrap-tab.js"></script>
-    <script src="./js/bootstrap-tooltip.js"></script>
-    <script src="./js/bootstrap-popover.js"></script>
-    <script src="./js/bootstrap-button.js"></script>
-    <script src="./js/bootstrap-collapse.js"></script>
-    <script src="./js/bootstrap-carousel.js"></script> 
-    <script src="./js/bootstrap-typeahead.js"></script>
-    <script src="js/jquery-ui-1.10.1.custom.js"></script>
-    <script type="text/javascript">  
-    $(function() {
-      $( "#sortable" ).sortable( { update: function( event, ui ) { console.log(event); console.log(ui); }
-    });
-    });
-    </script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/common/js/bootstrap.min.js"></script>
   </body>
 </html>
