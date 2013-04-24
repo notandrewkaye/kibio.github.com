@@ -1,0 +1,3 @@
+[submodule "kibio-common"]
+	path = kibio-common
+	url = https://github.com/notandrewkaye/kibio-common.git
