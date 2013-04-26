@@ -84,9 +84,8 @@ nav.li.active {
   .instructionSteps{
     color:#0F75BC;
     font-size: 22px;
-    margin:10px 0;
+    margin:10px;
     float:right;
-
   }
   .instructionSteps span{
     margin-right:24px;
@@ -97,6 +96,35 @@ nav.li.active {
   .circleactive{
     color: white;
   }
+
+  #leftArrow, #rightArrow{
+    width:74px;
+    height:76px;
+    min-width:74px;
+    min-height:76px;
+    background-position: center center;
+    cursor:pointer;
+  }
+  #leftArrow{
+    position:fixed;
+    left:0;
+    top:40%;
+    background-image: url(img_tmp/arrows_pixels_blue-left.png);
+  }
+  #leftArrow:hover{
+    background-image: url(img_tmp/arrows_pixels_white-left.png); 
+  }
+
+  #rightArrow{
+    position:fixed;
+    right:0;
+    top:40%;
+    background-image: url(img_tmp/arrows_pixels_blue-right.png);
+  }
+  #rightArrow:hover{
+    background-image: url(img_tmp/arrows_pixels_white-right.png);
+  }
+
     </style>
     
     <link href="./common/css/bootstrap-responsive.css" rel="stylesheet">
@@ -120,6 +148,7 @@ nav.li.active {
         <span class="fontawesome-circle-blank"></span>
       </div>
     </div>
+    
     <div class="row">
       <div class="hero-unit">
         <h3>
@@ -130,6 +159,15 @@ nav.li.active {
           <img src="img_tmp/kibio.set.up-10.png">
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="navArrows">
+    <div id="leftArrow">
+      <!-- <img src="img_tmp/arrows_pixels_blue-left.png"> -->
+    </div>
+    <div id="rightArrow">
+      <!-- <img src="img_tmp/arrows_pixels_blue-right.png"> -->
     </div>
   </div>
     <script src="./common/js/jquery.js"></script>
